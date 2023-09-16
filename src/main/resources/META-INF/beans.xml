@@ -7,11 +7,8 @@
 
 
     <interceptors>
-        <class>mainpackage.loggers.interceptors.LogInterceptor</class>
-        <class>mainpackage.files.interceptors.AuditedInterceptor</class>
+
         <class>mainpackage.lab1.interceptors.SolverInterceptor</class>
     </interceptors>
-    <decorators>
-        <class>mainpackage.files.decorators.ImageFileDecorator</class>
-    </decorators>
+
 </beans>
