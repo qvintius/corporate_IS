@@ -4,7 +4,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
-
 /*Создать компонент CDI, выполняющий решения систем уравнений с двумя неизвестными различными способами (подстановкой, сложением).
 Выбор способа решения должен быть реализован через указание соответствующей аннотации или посредством указания класса в XML файле.
 Посредством перехватчиков провести сравнение по времени эффективности различных методов
@@ -36,7 +35,3 @@ public class Lab1Main {
 
     }
 }
-
-
-//DecimalFormat dF = new DecimalFormat( "#.###" );
-//System.out.printf("(x, y)=%s\n", solver.solve(kx1, ky1, a, kx2, ky2, b));
