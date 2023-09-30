@@ -1,20 +1,22 @@
 package mainpackage.lab1.service;
 
+import mainpackage.lab1.qualifiers.MethodType;
+import mainpackage.lab1.qualifiers.SolvingMethod;
 import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import mainpackage.lab1.qualifiers.Sum;
 
-import java.text.DecimalFormat;
-
-//@Default
-@Sum
-//@Interceptors(SolverInterceptor.class)
-public class SumSolver implements ISolver{
+@SolvingMethod(MethodType.ADDITION)
+public class SumSolver implements ISolver{//сложение
     @Override
     public Pair<Double, Double> solve(double kx1, double ky1, double a, double kx2, double ky2, double b) {
-        System.out.println("sum");
 
+        /*double determinant = kx1 * ky2 - kx2 * ky1;
+        if (determinant == 0)
+            System.out.println("Система уравнений не имеет решения.");
+        else {
+            double x = (a * ky2 - b * ky1) / determinant;
+            double y = (kx1 * b - kx2 * a) / determinant;
+        }*/
         //коэффициент перед x уравнять со вторым уравнением, домножив первое уравнение на коэффициент c противоположным знаком(если они одинакового знака)
         ky1 = ky1/kx1 * kx2;
         a= a/kx1 * kx2;

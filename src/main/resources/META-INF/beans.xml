@@ -6,9 +6,12 @@
        bean-discovery-mode="all">
 
 
-    <interceptors>
-
+    <!--<interceptors>
         <class>mainpackage.lab1.interceptors.SolverInterceptor</class>
     </interceptors>
+    <decorators>
+        <class>mainpackage.lab2alt.decorators.WordFinderCaseInsensitive</class>
+        <class>mainpackage.lab2alt.decorators.WordFinderPieceWord</class>
+    </decorators>-->
 
 </beans>
