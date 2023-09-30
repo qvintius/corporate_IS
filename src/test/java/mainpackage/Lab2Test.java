@@ -1,10 +1,11 @@
 package mainpackage;
 
-import static org.junit.Assert.assertTrue;
 import mainpackage.lab2.WordFinder;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class Lab2Test {
     private static Weld weld;
