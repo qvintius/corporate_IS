@@ -15,9 +15,27 @@ public class Lab5Main {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         try {
-            StationWay stationWay = new StationWay();
-            //Set<ConstraintViolation<StationWay>> violations = validator.validate(stationWay);
+           StationWay stWay = new StationWay();
 
+            stWay.setId(1);
+            stWay.setIdWay("someId");
+            stWay.setIdStation(111);
+            stWay.setNameStation("dddd");
+            stWay.setNomWay(10);
+            stWay.setConstructionDate("12-12-1999");
+            stWay.setLength(0.8);
+            stWay.setPurpose(19);
+
+            Set<ConstraintViolation<StationWay>> violations1 = validator.validate(stWay);//отловить ошибки валидации
+            System.out.println("");
+
+            if (!violations1.isEmpty()) {
+                for (ConstraintViolation<StationWay> violation : violations1) {
+                    System.out.println(violation.getPropertyPath() + " " + violation.getMessage());
+                }
+            } else {
+                System.out.println("Объект stationWay валиден");
+            }
         } finally {
             factory.close();
         }
