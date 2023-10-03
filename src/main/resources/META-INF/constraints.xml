@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<constraint-mappings
+        xmlns="http://jboss.org/xml/ns/javax/validation/mapping"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping/validation-mapping-1.1.xsd"
+        version="1.1">
+
+    <bean class="mainpackage.lab4.PureStationWay" ignore-annotations="false">
+
+        <field name="id">
+            <constraint annotation="javax.validation.constraints.Positive">
+                <message>Системный идентификатор пути должен быть больше 0</message>
+            </constraint>
+        </field>
+        <field name="idWay">
+            <constraint annotation="javax.validation.constraints.NotBlank">
+                <message>Идентификатор должен быть задан</message>
+            </constraint>
+        </field>
+        <field name="idStation">
+            <constraint annotation="javax.validation.constraints.Positive">
+                <message>Идентификатор станции должен быть больше 0</message>
+            </constraint>
+        </field>
+        <field name="nameStation">
+            <constraint annotation="javax.validation.constraints.NotEmpty">
+                <message>Наименование станции не должно быть пустым</message>
+            </constraint>
+            <constraint annotation="javax.validation.constraints.Size">
+                <message>Наименование станции должно быть в пределах от 4 до 255 символов</message>
+                <element name="min">4</element>
+                <element name="max">255</element>
+            </constraint>
+        </field>
+
+        <field name="nomWay">
+            <constraint annotation="org.hibernate.validator.constraints.Range">
+                <message>Порядковый номер пути на станции должен быть не меньше 1 и не больше 10</message>
+                <element name="min">1</element>
+                <element name="max">10</element>
+            </constraint>
+        </field>
+
+        <field name="constructionDate">
+            <constraint annotation="javax.validation.constraints.Pattern">
+                <message>Длина для пути должна быть больше 1 метра</message>
+                <element name="regexp">[0-9]{2}-[0-9]{2}-[0-9]{4}</element>
+            </constraint>
+        </field>
+
+        <field name="length">
+            <constraint annotation="javax.validation.constraints.Positive">
+                <message>Длина для пути должна быть положительной</message>
+            </constraint>
+        </field>
+
+
+        <field name="purpose">
+            <constraint annotation="javax.validation.constraints.NotNull">
+                <message>Назначение пути должно быть задано</message>
+            </constraint>
+        </field>
+
+    </bean>
+</constraint-mappings>
+
