@@ -20,16 +20,11 @@ public class Lab3Main {
             RegistrationSystem regSys = container.instance().select(RegistrationSystem.class).get();
             RegSysHandler regSysHandler = container.instance().select(RegSysHandler.class).get();
 
-            /*Exam informatics = new Exam("Informatics");//экзамены на факультетах
-            Exam mathematics = new Exam("Mathematics");
-            Exam physics = new Exam("Physics");
-            Exam language = new Exam("Language");*/
+            //экзамены на факультетах
             Faculty facultyMaths = new Faculty("Applied Maths", Arrays.asList(
-                    new Exam("Informatics"),
-                    new Exam("Mathematics"), new Exam("Language")));
+                    new Exam("Informatics"), new Exam("Mathematics"), new Exam("Language")));
             Faculty facultyPhysics = new Faculty("Applied Physics", Arrays.asList(
-                    new Exam("Physics"),
-                    new Exam("Mathematics"), new Exam("Language")));
+                    new Exam("Physics"), new Exam("Mathematics"), new Exam("Language")));
 
 
 
