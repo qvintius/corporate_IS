@@ -6,7 +6,7 @@ import jakarta.decorator.Delegate;
 import jakarta.inject.Inject;
 import mainpackage.lab2.service.IWordFinder;
 
-@Decorator @Priority(1)
+@Decorator @Priority(2)
 public class WordFinderCaseInsensitive implements IWordFinder {//совпадение без учета регистра
 
     @Delegate @Inject
