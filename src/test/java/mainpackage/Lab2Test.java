@@ -13,7 +13,7 @@ public class Lab2Test {
 
     String str = "Декоратор перехватывает вызовы только для определенного интерфейса Java и, " +
             "следовательно, знает всю семантику, связанную с этим интерфейсом.";
-    private int decoratorsOn = 12;
+    private int decoratorsOn = 21;
     /* 0 - декораторы выключены
     1 - только caseInsensitive (без учета регистра)
     2 - только pieceWord (часть слова)

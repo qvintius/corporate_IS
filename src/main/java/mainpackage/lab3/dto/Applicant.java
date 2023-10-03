@@ -2,8 +2,8 @@ package mainpackage.lab3.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -11,29 +11,33 @@ public class Applicant {//абитуриент
     private String name;
     private Faculty faculty;
 
+
+    private List<Exam> exams = new ArrayList<>();
+    private double score;
+    private Status status;
+
     public Applicant(String name) {
         this.name = name;
+        status = Status.NOTREGISTERED;
+        score=0;
     }
 
-    private List<Exam> getExams(){
-        return faculty.getExams();
-    }
 
-    public void addExam(Exam exam) {
-        this.getExams().add(exam);
-    }
+    @AllArgsConstructor
+    public enum Status{
+        NOTREGISTERED ("не зарегестрирован"),
+        REGISTERED("зарегестрирован"),
+        NOTENROLLED("не зачислен"),
+        ENROLLED("зачислен");
 
-    public float calculateAverageMark() {
-        if (this.getExams().isEmpty()) {
-            return 0;
+        private String value;
+
+        @Override
+        public String toString() {
+            return "Status{" +
+                    "value='" + value + '\'' +
+                    '}';
         }
-
-        int sum = 0;
-        for (Exam exam : this.getExams()) {
-            sum += exam.getMark();
-        }
-
-        return (float) sum / this.getExams().size();
     }
 
 }

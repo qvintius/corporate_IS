@@ -1,18 +1,20 @@
 package mainpackage.lab3.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-public class Exam {
+public class Exam {//экзамен
     private String name;
-    private Teacher teacher;
     private int mark;
 
-    public Exam(String name, Teacher teacher) {
+    public Exam(String name) {
         this.name = name;
-        this.teacher = teacher;
         this.mark = 0;//default
     }
+
+    public Exam(String name, int mark){
+        this.name = name;
+        this.mark = mark;
+    }
+
 }
