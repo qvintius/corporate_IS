@@ -7,19 +7,15 @@ import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
+//валидирующая аннотация
 @Target({FIELD, METHOD, TYPE, PARAMETER, ANNOTATION_TYPE, CONSTRUCTOR})
 @Retention(RUNTIME)
-@Constraint(validatedBy = {InclElemValidator.class})
+@Constraint(validatedBy = {InclElemValidator.class})//ссылка на класс валидации
 public @interface IncludeElement {
     String message() default "{lab5.length.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-    int value() default 5;
 
-    @Target({METHOD, TYPE, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
-    @Retention(RUNTIME)
-    @interface List{
-        int[] value();
-    }
+
+
 }

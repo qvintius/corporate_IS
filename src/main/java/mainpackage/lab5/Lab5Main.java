@@ -24,7 +24,7 @@ public class Lab5Main {
             stWay.setNomWay(10);
             stWay.setConstructionDate("12-12-1999");
             stWay.setLength(0.8);
-            stWay.setPurpose(19);
+            stWay.setPurpose(18);
 
             Set<ConstraintViolation<StationWay>> violations1 = validator.validate(stWay);//отловить ошибки валидации
             System.out.println("");

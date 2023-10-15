@@ -31,8 +31,6 @@ public class StationWay {
     @Positive(message = "Длина для пути должна быть положительной")
     private double length = 0;//протяженность
 
-
-    //@NotNull(message = "Назначение пути должно быть задано")
-    @IncludeElement(value = 5)
-    private int purpose;//назначение: неопределено, главный, подъездной путь
+    @IncludeElement
+    private int purpose;//назначение: 0 - неопределено, 18 - главный, 99 - подъездной путь
 }
